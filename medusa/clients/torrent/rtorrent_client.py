@@ -78,8 +78,8 @@ class RTorrentAPI(GenericClient):
             # Start torrent
             torrent.start()
         except Exception as msg:
-            log.warning('Error while sending torrent: {error!r}',
-                        {'error': msg})
+            log.exception('Error while sending torrent: {error!r} torrent: {result!r}',
+                          {'error': msg, 'torrent': result})
             return False
         else:
             return True
@@ -110,8 +110,8 @@ class RTorrentAPI(GenericClient):
             # Start torrent
             torrent.start()
         except Exception as msg:
-            log.warning('Error while sending torrent: {error!r}',
-                        {'error': msg})
+            log.exception('Error while sending torrent: {error!r} torrent: {result!r}',
+                          {'error': msg, 'torrent': result})
             return False
         else:
             return True
